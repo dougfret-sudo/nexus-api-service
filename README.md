@@ -1,26 +1,28 @@
 # Yellow Iron Nexus API (v1.0.0)
-**High-Performance Backend Service for Industrial Asset Distribution**
+**High-Performance Private Backend for Industrial Asset Distribution**
 
 ## 🏗️ Overview
-The **Nexus API** is the distribution layer of the Yellow Iron Arbitrage ecosystem. It transforms raw SQL data collected by the Nexus Scraper into a structured, professional REST API. This service allows private buyers and internal systems to query high-ROI "Yellow Iron" deals (Track Hoes, Dozers, Graders) through a secure and documented gateway.
+The **Nexus API** acts as the professional distribution layer for the Yellow Iron Arbitrage system. It transforms raw SQL data into a structured REST API, allowing for rapid deal evaluation and system-to-system telemetry without manual database queries.
 
 ### ⚙️ System Logic
-- **[Data Modeling]**: Uses Pydantic for strict schema validation, ensuring all machine "Particulars" (Hours, Price, Serial Prefixes) are formatted correctly.
-- **[Query Engine]**: Provides dynamic filtering capabilities, allowing users to isolate deals by price ceiling, machine category, or regional location.
-- **[Auto-Documentation]**: Self-documents via OpenAPI/Swagger, providing an interactive UI for developers to test endpoints in real-time.
+- **[Data Governance]**: Implements Pydantic for strict schema validation of machine "Particulars" (Hours, Price, Category).
+- **[Query Engine]**: Enables dynamic filtering for real-time ROI tracking and asset location.
+- **[Dev-Ready]**: Features automated Swagger/OpenAPI documentation for interactive endpoint testing.
 
 ---
 
 ## 🛠️ Technical Stack
 - **Framework**: Python 3.x (FastAPI)
-- **Data Source**: SQLite3 (Shared with Nexus Scraper Engine)
+- **Data Source**: SQLite3
 - **Validation**: Pydantic v2
-- **Server**: Uvicorn (ASGI)
+- **Documentation**: Swagger UI / OpenAPI
 
 ---
 
-## 🚀 Quick Start (Development Mode)
+## 🚀 Development Workflow
+1. **Configure Environment**: Setup local `.env` for database paths.
+2. **Launch Service**: `uvicorn main:app --reload`
+3. **Internal Testing**: Access interactive docs at `http://127.0.0`
 
-### 1. Installation
-```bash
-pip install fastapi uvicorn pydantic python-dotenv
+---
+*Note: This repository represents the architectural design of a private data ecosystem. Data access is restricted for proprietary export arbitrage operations.*
