@@ -1,0 +1,14 @@
+# Local Environment Secrets
+.env
+
+# Database - Keep your local data private
+*.db
+nexus.db
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Virtual Environments
+venv/
+env/
